@@ -302,7 +302,6 @@ if __name__ == "__main__":
     grader_model_name = 'gpt-4o-mini'
     test_set = pd.read_csv('simple_qa_test_set.csv')
     test_set = test_set.to_dict(orient='records')
-    test_set = test_set[:5]
     results = evaluate_models(models, grader_model_name, test_set)
     results.to_csv(output_file, index=False)
     plot_calibration_curve_all(results)
